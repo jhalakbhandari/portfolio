@@ -1,0 +1,15 @@
+.intro-section {
+  background-image: url("/assets/images/bgimg.png"); /* Replace with your image path */
+  /* background-size: cover; */
+  background-position: center;
+  color: black; /* Ensure the text is visible over the image */
+  padding: 60px 0; /* Adjust padding to suit your design */
+  margin-top: 20px;
+}
+.intro-text {
+  background-color: white; /* White background */
+  padding: 10px 20px; /* Add padding for space around the text */
+  display: inline-block; /* Ensure the background box wraps the text */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for better visibility */
+}

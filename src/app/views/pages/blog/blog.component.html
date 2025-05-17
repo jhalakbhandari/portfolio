@@ -1,0 +1,92 @@
+<div *ngIf="isLoading">
+  <h1>Loading blog posts...</h1>
+</div>
+
+<div *ngIf="!isLoading">
+  <h1 class="text-center mt-4 mb-4">Blogs</h1>
+
+  <div *ngIf="blogPosts?.length; else noPosts">
+    <div *ngFor="let post of blogPosts" class="container">
+      <!-- Blog Title -->
+      <div class="row justify-content-left">
+        <h2 class="col-12 text-left mb-4">{{ post?.title }}</h2>
+      </div>
+
+      <!-- Blog Content (Left Aligned) -->
+      <div class="row">
+        <div class="col-12">
+          <p>
+            {{
+              truncateContent(
+                stripHtml(post?.content || post?.contentSnippet),
+                50
+              )
+            }}
+            <a
+              *ngIf="
+                (post?.content || post?.contentSnippet)?.split(' ').length > 50
+              "
+              [href]="post?.url"
+              target="_blank"
+            >
+              See more
+            </a>
+          </p>
+        </div>
+      </div>
+      <!-- Published Date and Tags (Before Divider) -->
+      <div class="row justify-content-between align-items-center mt-2">
+        <!-- Published Date -->
+        <div class="col-6 text-left">
+          <small class="text-muted">Published on: {{ post?.published }}</small>
+        </div>
+
+        <!-- Tags -->
+        <!-- <div class="col-6 text-right">
+          <div *ngIf="post?.labels?.length">
+            <span
+              *ngFor="let tag of extractTags(post?.labels)"
+              class="badge badge-pill"
+              [ngClass]="getTagClass(tag)"
+            >
+              {{ tag }}
+            </span>
+          </div>
+        </div> -->
+      </div>
+      <!-- Divider -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <hr />
+        </div>
+      </div>
+      <!-- Spacer -->
+      <div class="my-4"></div>
+    </div>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div
+    *ngIf="nextPageToken || currentPage > 1"
+    class="d-flex justify-content-between"
+  >
+    <button
+      class="btn btn-secondary"
+      (click)="loadPreviousPage()"
+      [disabled]="currentPage === 1"
+    >
+      Previous
+    </button>
+    <button
+      class="btn btn-secondary"
+      (click)="loadNextPage()"
+      [disabled]="!nextPageToken"
+    >
+      Next
+    </button>
+  </div>
+
+  <ng-template #noPosts>
+    <p>No blog posts available.</p>
+  </ng-template>
+</div>
