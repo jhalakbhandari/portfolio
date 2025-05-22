@@ -15,6 +15,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BlogModule } from './views/pages/blog/blog.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,6 @@ import { BlogModule } from './views/pages/blog/blog.module';
     HomeComponent, // Declare HomeComponent
     NavbarComponent, // Declare NavbarComponent
     FooterComponent, // Declare FooterComponent
-    // BlogModule,
 
     //BlogComponent, // Declare BlogComponent
     // CertificatesComponent, // Declare CertificatesComponent
@@ -35,6 +36,9 @@ import { BlogModule } from './views/pages/blog/blog.module';
     RouterModule,
     HttpClientModule,
     CommonModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    BlogModule,
   ],
   providers: [ApiService, UtilsService],
   bootstrap: [AppComponent],
