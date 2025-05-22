@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { BlogModule } from './views/pages/blog/blog.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     BlogModule,
+    FormsModule,
   ],
   providers: [ApiService, UtilsService],
   bootstrap: [AppComponent],

@@ -1,30 +1,11 @@
-<footer class="container py-5">
+<footer class="container py-5 border-top mt-5">
   <div class="row">
     <div class="col-12 col-md">
-      <h5>Jhalak</h5>
-      <h5>Bhandari</h5>
-
-      <!-- <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        class="d-block mb-2"
-        role="img"
-        viewBox="0 0 24 24"
-      > -->
-      <!-- <title>Jhalak Bhandari</title> -->
-      <!-- <circle cx="12" cy="12" r="10"></circle>
-        <path
-          d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
-        ></path>
-      </svg> -->
-      <!-- <small class="d-block mb-3 text-body-secondary">© 2017–2024</small> -->
+      <h5 class="fw-bold">Jhalak</h5>
+      <h5 class="fw-bold">Bhandari</h5>
+      <small class="d-block mb-3 text-body-secondary">© 2024</small>
     </div>
+
     <div class="col-6 col-md">
       <h5>Socials</h5>
       <ul class="list-unstyled text-small">
@@ -32,97 +13,86 @@
           <a
             class="link-secondary text-decoration-none"
             href="https://www.linkedin.com/in/jhalak-bhandari-3680961aa/"
-            >Linkedin</a
+            target="_blank"
+            >LinkedIn</a
           >
         </li>
-        <!-- <li>
-          <a class="link-secondary text-decoration-none" href="#"
-            >Random feature</a
-          >
-        </li>
-        <li>
-          <a class="link-secondary text-decoration-none" href="#"
-            >Team feature</a
-          >
-        </li>
-        <li>
-          <a class="link-secondary text-decoration-none" href="#"
-            >Stuff for developers</a
-          >
-        </li>
-        <li>
-          <a class="link-secondary text-decoration-none" href="#"
-            >Another one</a
-          >
-        </li>
-        <li>
-          <a class="link-secondary text-decoration-none" href="#">Last time</a>
-        </li> -->
       </ul>
     </div>
-    <div class="col-6 col-md">
-      <h5>Contact</h5>
-      <ul class="list-unstyled text-small">
-        <li>
-          <!-- <div class="email-link mt-3"> -->
-          <a
-            href="bhandari.jhalak2018@gmail.com"
-            class="link-secondary text-decoration-none"
-            >Email</a
-          >
-          <!-- </div> -->
-          <!-- <a  href="/blog">Email</a> -->
-        </li>
-        <!-- <li>
-          <a class="link-secondary text-decoration-none" href="#">Resource</a>
-        </li>
-        <li>
-          <a class="link-secondary text-decoration-none" href="#"
-            >Another resource</a
-          >
-        </li>
-        <li>
-          <a class="link-secondary text-decoration-none" href="#"
-            >Final resource</a
-          >
-        </li> -->
-      </ul>
-    </div>
+
     <div class="col-6 col-md">
       <h5>About</h5>
       <ul class="list-unstyled text-small">
         <li>
-          <a class="link-secondary text-decoration-none" href="/">About</a>
+          <a class="link-secondary text-decoration-none" routerLink="/"
+            >About</a
+          >
         </li>
         <li>
-          <a class="link-secondary text-decoration-none" href="/">Work</a>
+          <a class="link-secondary text-decoration-none" routerLink="/work"
+            >Work</a
+          >
         </li>
         <li>
-          <a class="link-secondary text-decoration-none" href="/certificate"
+          <a
+            class="link-secondary text-decoration-none"
+            routerLink="/certificate"
             >Certificates</a
           >
         </li>
-        <!-- <li>
-          <a class="link-secondary text-decoration-none" href="#">Gaming</a>
-        </li> -->
       </ul>
     </div>
-    <!-- <div class="col-6 col-md">
-      <h5>About</h5>
-      <ul class="list-unstyled text-small">
+    <div class="col-12 col-md">
+      <h5>Contact</h5>
+      <!-- <ul class="list-unstyled text-small">
         <li>
-          <a class="link-secondary text-decoration-none" href="#">Team</a>
+          <a
+            href="mailto:bhandari.jhalak2018@gmail.com"
+            class="link-secondary text-decoration-none"
+            >Email</a
+          >
         </li>
-        <li>
-          <a class="link-secondary text-decoration-none" href="#">Locations</a>
-        </li>
-        <li>
-          <a class="link-secondary text-decoration-none" href="#">Privacy</a>
-        </li>
-        <li>
-          <a class="link-secondary text-decoration-none" href="#">Terms</a>
-        </li>
-      </ul>
-    </div> -->
+      </ul> -->
+      <form (ngSubmit)="sendEmail()" #contactForm="ngForm">
+        <div class="mb-2">
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="formData.name"
+            placeholder="Your Name"
+            required
+            class="form-control form-control-sm"
+          />
+        </div>
+        <div class="mb-2">
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="formData.email"
+            placeholder="Your Email"
+            required
+            class="form-control form-control-sm"
+          />
+        </div>
+        <div class="mb-2">
+          <textarea
+            name="message"
+            [(ngModel)]="formData.message"
+            placeholder="Your Message"
+            required
+            class="form-control form-control-sm"
+            rows="2"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          [disabled]="loading"
+          class="btn btn-outline-secondary btn-sm w-100"
+        >
+          <span *ngIf="!loading">Send</span>
+          <span *ngIf="loading" class="spinner"></span>
+        </button>
+      </form>
+    </div>
   </div>
 </footer>
