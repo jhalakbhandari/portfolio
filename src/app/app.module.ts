@@ -18,6 +18,9 @@ import { BlogModule } from './views/pages/blog/blog.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { TestimonialComponent } from './views/pages/testimonial/testimonial.component';
+import { TestimonialModule } from './views/pages/testimonial/testimonial.module';
+import { TestimonialCarouselComponent } from './views/pages/testimonial-carousel/testimonial-carousel.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent, // Declare HomeComponent
     NavbarComponent, // Declare NavbarComponent
     FooterComponent, // Declare FooterComponent
-
+    TestimonialCarouselComponent,
     //BlogComponent, // Declare BlogComponent
     // CertificatesComponent, // Declare CertificatesComponent
     EducationComponent, // Declare EducationComponent
@@ -41,6 +44,7 @@ import { FormsModule } from '@angular/forms';
     MatProgressSpinnerModule,
     BlogModule,
     FormsModule,
+    TestimonialModule,
   ],
   providers: [ApiService, UtilsService],
   bootstrap: [AppComponent],

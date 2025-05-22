@@ -1,0 +1,44 @@
+<div
+  class="container d-flex justify-content-center align-items-center min-vh-100"
+>
+  <div class="p-4 w-100" style="max-width: 600px">
+    <h2 class="text-center mb-4">Add Your Testimonial</h2>
+
+    <form
+      (submit)="
+        submitTestimonial(name.value, message.value);
+        name.value = '';
+        message.value = '';
+        $event.preventDefault()
+      "
+    >
+      <div class="mb-3">
+        <input
+          #name
+          type="text"
+          class="form-control"
+          placeholder="Your Name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <textarea
+          #message
+          class="form-control"
+          placeholder="Your Testimonial"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark w-100">Submit</button>
+    </form>
+
+    <hr class="my-4" />
+
+    <!--<div *ngFor="let t of testimonials" class="mb-3 p-3 border rounded">
+      <h5 class="mb-1">{{ t.name }}</h5>
+      <p class="mb-0">{{ t.message }}</p>
+      <small class="text-muted">{{ t.created_at | date: 'short' }}</small>
+    </div>-->
+  </div>
+</div>

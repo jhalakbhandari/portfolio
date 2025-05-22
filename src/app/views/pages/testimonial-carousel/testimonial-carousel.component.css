@@ -1,0 +1,31 @@
+.custom-carousel-item {
+  background-color: rgba(0, 0, 0, 0.7); /* black translucent */
+  color: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 1rem;
+  width: 100%;
+  max-width: 700px;
+  height: 300px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Match the height of custom-carousel-item */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* makes them white */
+}
+@media (max-width: 576px) {
+  .custom-carousel-item {
+    height: 250px;
+    padding: 1.5rem;
+  }
+}

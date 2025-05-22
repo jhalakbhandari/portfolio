@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { BlogComponent } from './views/pages/blog/blog.component';
 import { CertificatesComponent } from './views/pages/certificates/certificates.component';
 import { BlogResolverService } from './views/pages/blog/blog-resolver.service';
+import { TestimonialComponent } from './views/pages/testimonial/testimonial.component';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,10 @@ export const routes: Routes = [
     resolve: {
       blogData: BlogResolverService,
     },
+  },
+  {
+    path: 'testimonial',
+    component: TestimonialComponent,
   },
 ];
 
