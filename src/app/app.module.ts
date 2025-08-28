@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { TestimonialComponent } from './views/pages/testimonial/testimonial.component';
 import { TestimonialModule } from './views/pages/testimonial/testimonial.module';
 import { TestimonialCarouselComponent } from './views/pages/testimonial-carousel/testimonial-carousel.component';
+import { ProjectsComponent } from './views/pages/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TestimonialCarouselComponent } from './views/pages/testimonial-carousel
     NavbarComponent, // Declare NavbarComponent
     FooterComponent, // Declare FooterComponent
     TestimonialCarouselComponent,
+    ProjectsComponent,
     //BlogComponent, // Declare BlogComponent
     // CertificatesComponent, // Declare CertificatesComponent
     EducationComponent, // Declare EducationComponent

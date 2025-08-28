@@ -1,0 +1,119 @@
+<div class="row g-4">
+  <h2 class="text-center mb-4">Projects</h2>
+  <div class="col-md-4" *ngFor="let project of projects">
+    <div
+      class="card h-100 shadow"
+      (click)="openModal(project)"
+      style="cursor: pointer"
+    >
+      <img
+        [src]="project.imageUrl"
+        class="card-img-top img-fluid"
+        alt="{{ project.title }}"
+        style="object-fit: cover; height: 200px"
+      />
+
+      <div class="card-body">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <p
+          *ngIf="project['organisation']"
+          class="text-muted mb-2"
+          style="font-size: 0.85rem"
+        >
+          Developed at {{ project["organisation"] }}
+        </p>
+
+        <p>
+          <span
+            class="badge bg-secondary me-1"
+            *ngFor="let tag of project.tech"
+          >
+            {{ tag }}
+          </span>
+        </p>
+        <a
+          [href]="project.projectLink"
+          target="_blank"
+          class="btn btn-outline-primary"
+          >Live Demo</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal show d-block" *ngIf="selectedProject">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h5 class="modal-title mb-0">{{ selectedProject.title }}</h5>
+          <p
+            *ngIf="selectedProject['organisation']"
+            class="text-muted"
+            style="font-size: 0.85rem"
+          >
+            Developed at {{ selectedProject["organisation"] }}
+          </p>
+        </div>
+
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+
+      <div class="modal-body">
+        <img
+          [src]="selectedProject.imageUrl"
+          class="img-fluid mb-3 rounded"
+          *ngIf="selectedProject.imageUrl"
+        />
+        <p><strong>Description:</strong> {{ selectedProject.description }}</p>
+
+        <div *ngFor="let key of objectKeys(selectedProject)">
+          <ng-container
+            *ngIf="
+              ![
+                'title',
+                'imageUrl',
+                'tech',
+                'projectLink',
+                'githubLink',
+                'description'
+              ].includes(key)
+            "
+          >
+            <p>
+              <strong>{{ key | titlecase }}:</strong> {{ selectedProject[key] }}
+            </p>
+          </ng-container>
+        </div>
+
+        <div>
+          <strong>Technologies:</strong>
+          <span
+            class="badge bg-info me-1"
+            *ngFor="let tech of selectedProject.tech"
+          >
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a
+          [href]="selectedProject.githubLink"
+          target="_blank"
+          class="btn btn-outline-dark"
+          >GitHub</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Backdrop -->
+<div
+  class="modal-backdrop fade show"
+  *ngIf="selectedProject"
+  (click)="closeModal()"
+></div>

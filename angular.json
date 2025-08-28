@@ -23,6 +23,7 @@
                 "glob": "**/*",
                 "input": "public"
               },
+
               "src/assets"
             ],
             "styles": ["src/styles.css"],
@@ -84,7 +85,10 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Source+Sans+Pro:wght@300;400;600&display=swap",
+              "src/styles.css"
+            ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]

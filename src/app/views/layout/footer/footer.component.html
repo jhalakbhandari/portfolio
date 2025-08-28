@@ -1,14 +1,16 @@
 <footer class="container py-5 border-top mt-5">
-  <div class="row">
-    <div class="col-12 col-md">
-      <h5 class="fw-bold">Jhalak</h5>
+  <div class="row gy-4">
+    <!-- Name + Copyright -->
+    <div class="col-12 col-md-3 text-center text-md-start">
+      <h5 class="fw-bold mb-0">Jhalak</h5>
       <h5 class="fw-bold">Bhandari</h5>
-      <small class="d-block mb-3 text-body-secondary">© 2024</small>
+      <small class="text-body-secondary">© 2024</small>
     </div>
 
-    <div class="col-6 col-md">
-      <h5>Socials</h5>
-      <ul class="list-unstyled text-small">
+    <!-- Social Links -->
+    <div class="col-6 col-md-2">
+      <h6 class="fw-bold">Socials</h6>
+      <ul class="list-unstyled">
         <li>
           <a
             class="link-secondary text-decoration-none"
@@ -22,15 +24,16 @@
             class="link-secondary text-decoration-none"
             href="https://github.com/jhalakbhandari"
             target="_blank"
-            >Github</a
+            >GitHub</a
           >
         </li>
       </ul>
     </div>
 
-    <div class="col-6 col-md">
-      <h5>About</h5>
-      <ul class="list-unstyled text-small">
+    <!-- Navigation Links -->
+    <div class="col-6 col-md-2">
+      <h6 class="fw-bold">Explore</h6>
+      <ul class="list-unstyled">
         <li>
           <a class="link-secondary text-decoration-none" routerLink="/"
             >About</a
@@ -50,17 +53,10 @@
         </li>
       </ul>
     </div>
-    <div class="col-12 col-md">
-      <h5>Contact</h5>
-      <!-- <ul class="list-unstyled text-small">
-        <li>
-          <a
-            href="mailto:bhandari.jhalak2018@gmail.com"
-            class="link-secondary text-decoration-none"
-            >Email</a
-          >
-        </li>
-      </ul> -->
+
+    <!-- Contact Form -->
+    <div class="col-12 col-md-5">
+      <h6 class="fw-bold mb-3">Contact Me</h6>
       <form (ngSubmit)="sendEmail()" #contactForm="ngForm">
         <div class="mb-2">
           <input
@@ -98,7 +94,7 @@
           class="btn btn-outline-secondary btn-sm w-100"
         >
           <span *ngIf="!loading">Send</span>
-          <span *ngIf="loading" class="spinner"></span>
+          <span *ngIf="loading" class="spinner-border spinner-border-sm"></span>
         </button>
       </form>
     </div>

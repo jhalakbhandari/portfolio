@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Bondbox",
+    "imageUrl": "/assets/images/Bondbox.png",
+    "tech": [
+      "Reactjs",
+      "Typescript",
+      "Nodejs",
+      "Mongodb",
+      "Express.js",
+      "Tailwindcss",
+      "Render",
+      "Vercel"
+    ],
+    "projectLink": "https://bondbox-client.vercel.app/auth",
+    "githubLink": "https://github.com/jhalakbhandari/Bondbox_client",
+    "description": "Built a responsive full-stack web app (React, Node.js, MongoDB) for private memory sharing.",
+    "duration": "August - present",
+    "team": "Solo"
+  },
+
+  {
+    "title": "Personal Portfolio",
+
+    "imageUrl": "/assets/images/portfolio.png",
+    "tech": ["Angular", "Supabase", "Netlify"],
+    "projectLink": "https://willowy-snickerdoodle-4484a5.netlify.app/",
+    "githubLink": "https://github.com/jhalakbhandari/portfolio",
+    "description": "An Angular portfolio with Supabase integration and netlify for deployment.",
+    "duration": "Present",
+    "team": "Solo"
+  }
+]
